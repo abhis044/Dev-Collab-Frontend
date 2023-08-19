@@ -16,7 +16,7 @@ let navigate = useNavigate();
     description: "",
   });
     useEffect(() => {
-      if (!localStorage.getItem("devroom")) {
+      if (!localStorage.getItem("devcollab")) {
         navigate("/users/login");
       }
     }, []);
@@ -40,7 +40,7 @@ let navigate = useNavigate();
     await axios.put("https://engagepost.onrender.com/api/profiles/experience/",experience,{
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("devroom")}`,
+        Authorization: `Bearer ${localStorage.getItem("devcollab")}`,
       },
     })
     Swal.fire("Experience added successfully", "", "success");

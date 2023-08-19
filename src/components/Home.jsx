@@ -5,7 +5,7 @@ let Home = () => {
 
   let navigate = useNavigate();
    let clickLogOut = async () => {
-     localStorage.removeItem("devroom");
+     localStorage.removeItem("devcollab");
      navigate("/users/login");
    };
 
@@ -19,7 +19,7 @@ let Home = () => {
               A website for developers where they can post their works, update
               profile and connect to other developers accross the globe
             </p>
-            {localStorage.getItem("devroom") ? (
+            {localStorage.getItem("devcollab") ? (
               <div className="animated jello">
                 <Link
                   to="/users/register"

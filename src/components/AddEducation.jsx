@@ -17,7 +17,7 @@ let AddEducation = () => {
 
 
       useEffect(() => {
-        if (!localStorage.getItem("devroom")) {
+        if (!localStorage.getItem("devcollab")) {
           navigate("/users/login");
         }
       }, []);
@@ -42,7 +42,7 @@ let AddEducation = () => {
     await axios.put("https://engagepost.onrender.com/api/profiles/education/",education,{
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("devroom")}`,
+        Authorization: `Bearer ${localStorage.getItem("devcollab")}`,
       },
     })
     Swal.fire("Education added successfully", "", "success");

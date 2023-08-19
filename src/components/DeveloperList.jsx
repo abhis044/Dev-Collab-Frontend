@@ -22,7 +22,7 @@ let DeveloperList = () => {
     
   }
   useEffect(() => {
-    if (localStorage.getItem("devroom")) {
+    if (localStorage.getItem("devcollab")) {
       
       setLoggedIn(true)
     }
@@ -38,7 +38,7 @@ let DeveloperList = () => {
     let { data } = await axios.get("https://engagepost.onrender.com/api/users/me", {
      headers: {
        "Content-Type": "application/json",
-       Authorization: `Bearer ${localStorage.getItem("devroom")}`,
+       Authorization: `Bearer ${localStorage.getItem("devcollab")}`,
      },
    });
    setUser(data.user);
@@ -49,7 +49,7 @@ let DeveloperList = () => {
       let {status,data} = await axios.get("https://engagepost.onrender.com/api/profiles/me",{
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("devroom")}`,
+          Authorization: `Bearer ${localStorage.getItem("devcollab")}`,
         },
       })
        console.log(data)
@@ -79,7 +79,7 @@ let DeveloperList = () => {
     const {data} = await axios.put(`https://engagepost.onrender.com/api/profiles/follow/${profileId}`,{},{
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("devroom")}`,
+        Authorization: `Bearer ${localStorage.getItem("devcollab")}`,
       }
     });
    fetchProfiles();

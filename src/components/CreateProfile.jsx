@@ -22,7 +22,7 @@ let CreateProfile = () => {
   });
 
   useEffect(()=>{
-    if(!localStorage.getItem("devroom")){
+    if(!localStorage.getItem("devcollab")){
       navigate("/users/login")
     }
   },[])
@@ -62,7 +62,7 @@ let CreateProfile = () => {
     await axios.post("https://engagepost.onrender.com/api/profiles/", profile, {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("devroom")}`,
+        Authorization: `Bearer ${localStorage.getItem("devcollab")}`,
       },
     });
 

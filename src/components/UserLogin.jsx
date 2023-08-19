@@ -18,7 +18,7 @@ let UserLogin = () => {
   });
 
   useEffect(()=>{
-    if(localStorage.getItem("devroom")){
+    if(localStorage.getItem("devcollab")){
       navigate("/");
     }
   },[])
@@ -51,7 +51,7 @@ let UserLogin = () => {
         Swal.fire("Invalid credentials","", "error");
       }else if(status==200){
          Swal.fire("Login successful","", "success");
-         localStorage.setItem("devroom", data.token);
+         localStorage.setItem("devcollab", data.token);
          navigate("/developers");
       }
       

@@ -16,7 +16,7 @@ let Dashboard = () => {
     let navigate = useNavigate();
    
     useEffect(() => {
-      if (!localStorage.getItem("devroom")) {
+      if (!localStorage.getItem("devcollab")) {
         navigate("/users/login");
       }
       setLoggedIn(true);
@@ -27,7 +27,7 @@ let Dashboard = () => {
     let {status,data} = await axios.get("https://engagepost.onrender.com/api/profiles/me",{
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("devroom")}`,
+        Authorization: `Bearer ${localStorage.getItem("devcollab")}`,
       },
     })
      console.log(data)
@@ -44,7 +44,7 @@ let Dashboard = () => {
   let { data } = await axios.get("https://engagepost.onrender.com/api/users/me", {
    headers: {
      "Content-Type": "application/json",
-     Authorization: `Bearer ${localStorage.getItem("devroom")}`,
+     Authorization: `Bearer ${localStorage.getItem("devcollab")}`,
    },
  });
  setUser(data.user);
@@ -65,7 +65,7 @@ let Dashboard = () => {
     const {data} = await axios.delete(`https://engagepost.onrender.com/api/profiles/experience/${experienceId}`,{
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("devroom")}`,
+        Authorization: `Bearer ${localStorage.getItem("devcollab")}`,
       },
     })
     Swal.fire("Experience deleted", "", "success");
@@ -78,7 +78,7 @@ let Dashboard = () => {
      {
        headers: {
          "Content-Type": "application/json",
-         Authorization: `Bearer ${localStorage.getItem("devroom")}`,
+         Authorization: `Bearer ${localStorage.getItem("devcollab")}`,
        },
      }
    );

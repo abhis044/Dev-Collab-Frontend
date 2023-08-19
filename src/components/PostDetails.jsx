@@ -16,7 +16,7 @@ let PostDetails = () => {
   let postId = useParams().postId;
   let navigate = useNavigate();
  useEffect(() => {
-   if (!localStorage.getItem("devroom")) {
+   if (!localStorage.getItem("devcollab")) {
      navigate("/users/login");
    }
    setLoggedIn(true);
@@ -51,7 +51,7 @@ let PostDetails = () => {
      let { data } = await axios.get("https://engagepost.onrender.com/api/users/me", {
        headers: {
          "Content-Type": "application/json",
-         Authorization: `Bearer ${localStorage.getItem("devroom")}`,
+         Authorization: `Bearer ${localStorage.getItem("devcollab")}`,
        },
      });
      setUser(data.user);
@@ -62,7 +62,7 @@ let PostDetails = () => {
     let { data } = await axios.get(`https://engagepost.onrender.com/api/posts/${postId}`, {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("devroom")}`,
+        Authorization: `Bearer ${localStorage.getItem("devcollab")}`,
       },
     });
     setSelectedPost(data.post)
@@ -82,7 +82,7 @@ let PostDetails = () => {
     await axios.post(`https://engagepost.onrender.com/api/posts/comment/${postId}`, comment, {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("devroom")}`,
+        Authorization: `Bearer ${localStorage.getItem("devcollab")}`,
       },
     });
     setComment({
@@ -98,7 +98,7 @@ let PostDetails = () => {
     await axios.delete(`https://engagepost.onrender.com/api/posts/comment/${postId}/${commentId}`, {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("devroom")}`,
+        Authorization: `Bearer ${localStorage.getItem("devcollab")}`,
       },
     });
     Swal.fire("Comment deleted suucessfully", "", "success");

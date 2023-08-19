@@ -16,7 +16,7 @@ let PostList = () => {
   let [loading,setLoading] = useState(true);
   let [loggedIn,setLoggedIn]=useState(false);
  useEffect(() => {
-   if (!localStorage.getItem("devroom")) {
+   if (!localStorage.getItem("devcollab")) {
      navigate("/users/login");
    }
    setLoggedIn(true);
@@ -53,7 +53,7 @@ let PostList = () => {
      let { data } = await axios.get("https://engagepost.onrender.com/api/users/me", {
        headers: {
          "Content-Type": "application/json",
-         Authorization: `Bearer ${localStorage.getItem("devroom")}`,
+         Authorization: `Bearer ${localStorage.getItem("devcollab")}`,
        },
      });
      setUser(data.user);
@@ -64,7 +64,7 @@ let PostList = () => {
       let { data } = await axios.get("https://engagepost.onrender.com/api/posts/", {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("devroom")}`,
+          Authorization: `Bearer ${localStorage.getItem("devcollab")}`,
         },
       });
       setPosts(data.posts);
@@ -95,7 +95,7 @@ let PostList = () => {
       const {data} =  await axios.post("https://engagepost.onrender.com/api/posts/",localPost,{
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("devroom")}`,
+        Authorization: `Bearer ${localStorage.getItem("devcollab")}`,
       },
     })
     Swal.fire("Post created successfully", "", "success");
@@ -113,7 +113,7 @@ let PostList = () => {
     const { data } = await axios.delete(`https://engagepost.onrender.com/api/posts/${postId}`, {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("devroom")}`,
+        Authorization: `Bearer ${localStorage.getItem("devcollab")}`,
       },
     });
     let newArr = posts.filter((post)=>{
@@ -128,7 +128,7 @@ let PostList = () => {
     const {data} = await axios.put(`https://engagepost.onrender.com/api/posts/like/${postId}`,{},{
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("devroom")}`,
+        Authorization: `Bearer ${localStorage.getItem("devcollab")}`,
       }
     });
    getPosts();

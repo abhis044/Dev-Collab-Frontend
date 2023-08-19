@@ -11,20 +11,20 @@ let Navbar = () => {
     const { data } = await axios.get("https://engagepost.onrender.com/api/users/me", {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("devroom")}`,
+        Authorization: `Bearer ${localStorage.getItem("devcollab")}`,
       },
     });
     setUser(data.user)
   }
 
   useEffect(()=>{
- if(localStorage.getItem("devroom"))
+ if(localStorage.getItem("devcollab"))
     getUser();
 
   },[]);
 
   let clickLogOut = async() => {
-    localStorage.removeItem("devroom");
+    localStorage.removeItem("devcollab");
     navigate("/users/login");
   };
 
@@ -107,7 +107,7 @@ let Navbar = () => {
               </li>
             </ul>
             <ul className="navbar-nav ml-auto">
-              {localStorage.getItem("devroom") ? afterLogin : beforeLogin}
+              {localStorage.getItem("devcollab") ? afterLogin : beforeLogin}
             </ul>
           </div>
         </div>
