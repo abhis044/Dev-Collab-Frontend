@@ -144,7 +144,7 @@ let PostList = () => {
         <div className="container">
           <div className="row">
             <div className="col">
-              <p className="h3 text-teal">Welcome to Dev-Room Posts</p>
+              <p className="h3 text-teal">Welcome to Dev-collab Posts</p>
               <p>
                 Post your achievements, suceess and needs and share with other
                 developers!

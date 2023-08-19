@@ -84,7 +84,7 @@ let Navbar = () => {
       <nav className="navbar fixed-top navbar-dark bg-dark navbar-expand-sm">
         <div className="container">
           <Link to="/" className="navbar-brand">
-            <i className="fa fa-code" /> Dev-room
+            <i className="fa fa-code" /> Dev-collab
           </Link>
           <button
             class="navbar-toggler"

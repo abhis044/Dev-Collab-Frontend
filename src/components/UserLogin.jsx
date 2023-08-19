@@ -69,7 +69,7 @@ let UserLogin = () => {
               <p className="h3 text-teal">
                 <i className="fa fa-sign-in-alt" /> Login
               </p>
-              <p>Login into Dev-room</p>
+              <p>Login into Dev-collab</p>
             </div>
           </div>
         </div>

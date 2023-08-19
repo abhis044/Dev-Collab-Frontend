@@ -87,7 +87,7 @@ let UserRegister = () => {
               <p className="h3 text-teal">
                 <i className="fa fa-user-shield" /> Registration
               </p>
-              <p>Register to Dev-room</p>
+              <p>Register to Dev-collab</p>
             </div>
           </div>
         </div>
