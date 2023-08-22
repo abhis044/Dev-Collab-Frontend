@@ -58,7 +58,7 @@ let EditProfile = () => {
   };
 
      const getProfile = async (userPassed) => {
-       let { status, data } = await axios.get("http://localhost:4000/api/profiles/me", {
+       let { status, data } = await axios.get("https://engagepost.onrender.com/api/profiles/me", {
          headers: {
            "Content-Type": "application/json",
            Authorization: `Bearer ${localStorage.getItem("devcollab")}`,
